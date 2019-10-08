@@ -1,0 +1,9 @@
+*/target/*
+NOTICE.md
+build/
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr

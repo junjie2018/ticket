@@ -1,0 +1,52 @@
+server:
+  port: 8761
+
+spring:
+  application:
+    name: eureka
+# 用于密码实验
+#  security:
+#    user:
+#      name: user
+#      password: asdf
+
+eureka:
+  # 关闭自我保护模式，开发模式可以关闭，生产模式最好开启
+  server:
+    enable-self-preservation: false
+  client:
+    register-with-eureka: false # 自己本身不需要作为一个Eureka Client
+    fetch-registry: false           # 该实例只作为注册中心，不需要检索服务
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+#      defaultZone: http://user:password1@localhost:8761/eureka/
+
+---
+spring:
+ profiles: eureka1
+
+server:
+  port: 8761
+
+eureka:
+  instance:
+    hostname: eureka1
+  client:
+    service-url:
+      defaultZone: http://eureka2:8762/eureka
+
+---
+spring:
+ profiles: eureka2
+
+server:
+  port: 8762
+
+eureka:
+  instance:
+    hostname: eureka2
+  client:
+    service-url:
+      defaultZone: http://eureka1:8761/eureka
+
+

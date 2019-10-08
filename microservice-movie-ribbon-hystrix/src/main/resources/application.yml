@@ -1,0 +1,35 @@
+server:
+  port: 9000
+
+spring:
+ application:
+   name: microservice-movie
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+management:
+  # 显示hystrix.stream
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
+
+  # health 展示hystrix状态
+  endpoint:
+    health:
+      show-details: always
+
+info:
+  app:
+    name: @project.artifactId@
+    encoding: @project.build.sourceEncoding@
+    java:
+      source: @java.version@
+      target: @java.version@
+
+

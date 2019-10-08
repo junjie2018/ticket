@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.6.RELEASE</version>
+        <relativePath/>
+    </parent>
+
+    <groupId>fun.mytoys</groupId>
+    <artifactId>Ticket</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+
+    <modules>
+        <!-- eureka -->
+        <module>microservice-eureka</module>
+
+        <!-- gateway -->
+        <module>microservice-gateway</module>
+
+        <!-- ribbon -->
+        <module>microservice-config</module>
+
+        <!-- hystrix dashboard -->
+        <module>microservice-hystrix-dashboard</module>
+        <module>microservice-hystrix-turbine</module>
+
+        <!-- user -->
+        <module>microservice-user</module>
+        <module>microservice-user-with-auth</module>
+
+        <!-- movie -->
+        <module>microservice-movie-ribbon-config-configuration</module>
+        <module>microservice-movie-ribbon-config-properties</module>
+        <module>microservice-movie-ribbon-config-without-eureka</module>
+
+        <module>microservice-movie-feign</module>
+        <module>microservice-movie-feign-custom</module>
+
+        <module>microservice-movie-ribbon-hystrix</module>
+        <module>microservice-movie-feign-hystrix</module>
+        <module>microservice-movie-feign-hystrix-factory</module>
+
+        <!-- upload -->
+        <module>microservice-upload</module>
+
+        <!-- sleuth -->
+        <module>microservice-user-sleuth</module>
+
+
+
+
+    </modules>
+
+    <properties>
+        <j.spring-cloud.version>Greenwich.RELEASE</j.spring-cloud.version>
+        <j.spring-boot.version></j.spring-boot.version>
+
+        <j.snakeyaml.version>1.10</j.snakeyaml.version>
+        <j.fastjson.version>1.2.59</j.fastjson.version>
+        <j.lombok.version>1.18.6</j.lombok.version>
+        <j.commons-io.version>2.6</j.commons-io.version>
+        <j.commons-lang3.version>3.8.1</j.commons-lang3.version>
+        <j.commons-collections4.version>4.4</j.commons-collections4.version>
+        <j.commons-beanutils.version>1.9.3</j.commons-beanutils.version>
+        <j.commons-codec.version>1.12</j.commons-codec.version>
+        <j.logstash-logback-encoder.version>4.6</j.logstash-logback-encoder.version>
+    </properties>
+
+
+    <dependencies>
+        <!-- 用于 SpringBoot基本启动器 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <!-- 用于 Spring Boot Actuator -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${j.spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+
+</project>

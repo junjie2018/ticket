@@ -1,0 +1,13 @@
+server:
+  port: 1000
+spring:
+  application:
+    name: microservice-ribbon
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/junjie2019/ConfigRepository.git
+          username: junjie2020
+          password: StudyAccount2020
+          search-paths: Ticket

@@ -1,0 +1,35 @@
+On branch master
+Your branch is ahead of 'origin/master' by 3 commits.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	renamed:    microservice-movie-feign-custom/src/main/java/fun/mytoys/ticket/feignconfig/FeignConfig.java -> microservice-movie-feign-custom/src/main/java/fun/mytoys/ticket/feign/FeignConfig.java
+	renamed:    microservice-movie-feign/src/main/java/fun/mytoys/ticket/feignconfig/FeignConfig.java -> microservice-movie-feign/src/main/java/fun/mytoys/ticket/feign/MicroserviceUserFeignConfig.java
+	new file:   microservice-movie-ribbon-config-configuration/src/main/java/fun/mytoys/ticket/movie/config/RibbonConfig.java
+	renamed:    microservice-movie-ribbon-config-configuration/src/main/java/fun/mytoys/ticket/config/RibbonConfiguration.java -> microservice-movie-ribbon-config-configuration/src/main/java/fun/mytoys/ticket/ribbon/MicroserviceUserRibbonConfig.java
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   microservice-config/src/main/resources/application.yml
+	modified:   microservice-eureka/src/main/java/fun/mytoys/ticket/eureka/security/SecurityConfiguration.java
+	modified:   microservice-movie-feign-custom/src/main/java/fun/mytoys/ticket/feign/FeignConfig.java
+	modified:   microservice-movie-feign-custom/src/main/java/fun/mytoys/ticket/movie/client/UserFeignClient.java
+	modified:   microservice-movie-feign/src/main/java/fun/mytoys/ticket/feign/MicroserviceUserFeignConfig.java
+	modified:   microservice-movie-feign/src/main/java/fun/mytoys/ticket/movie/client/UserFeignClient.java
+	modified:   microservice-movie-ribbon-config-configuration/src/main/java/fun/mytoys/ticket/movie/config/RibbonConfig.java
+	modified:   microservice-movie-ribbon-config-configuration/src/main/java/fun/mytoys/ticket/movie/config/TestConfiguration.java
+	modified:   microservice-movie-ribbon-config-configuration/src/main/java/fun/mytoys/ticket/ribbon/MicroserviceUserRibbonConfig.java
+	modified:   microservice-movie-ribbon-config-properties/src/main/resources/application.yml
+	modified:   microservice-movie-ribbon-config-without-eureka/src/main/resources/application.yml
+	modified:   pom.xml
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	run.sh
+	tmp
+

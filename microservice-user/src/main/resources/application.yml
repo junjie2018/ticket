@@ -1,0 +1,72 @@
+spring:
+  profiles:
+    active: user
+    include: common
+
+---
+# user
+spring:
+  profiles: user
+
+server:
+  port: 8000
+
+---
+# user0
+spring:
+  profiles: user0
+
+server:
+  port: 8010
+
+---
+# user1
+spring:
+  profiles: user1
+
+server:
+  port: 8011
+
+---
+# common
+spring:
+  profiles: common
+
+  application:
+   name: microservice-user
+
+  # 数据源
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.31.29:3306/mybatis?serverTimezone=CTT&useUnicode=true&characterEncoding=utf8&useSSL=false&allowMultiQueries=true&autoReconnect=true
+    username: root
+    password: 1234
+    tomcat:
+      max-active: 4
+      min-idle: 2
+      initial-size: 2
+
+  # jpa配置
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate.format_sql: true
+    open-in-view: false
+
+eureka:
+  instance:
+    # TODO 了解hostname、virtual-host-name、secure.virtual-host-name的区别，和在生产中的选择
+#    virtual-host-name: microservice-user
+    prefer-ip-address: true
+    metadata-map:
+      custome-metadata: 自定义元数据
+
+
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+      # 密码的实验没有通过
+#       defaultZone: http://user:password1@localhost:8761/eureka/
+

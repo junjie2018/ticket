@@ -1,0 +1,18 @@
+server:
+  port: 8081
+
+spring:
+ application:
+   name: microservice-simple-provider-movie
+
+microservice-user:
+  ribbon:
+    listOfServers: localhost:8090,localhost:8091
+
+info:
+  app:
+    name: @project.artifactId@
+    encoding: @project.build.sourceEncoding@
+    java:
+      source: @java.version@
+      target: @java.version@

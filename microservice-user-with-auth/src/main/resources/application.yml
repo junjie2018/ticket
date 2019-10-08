@@ -1,0 +1,124 @@
+server:
+  port: 8081
+
+eureka:
+  instance:
+    hostname: microservice-simple-provider-user
+    prefer-ip-address: true
+    metadata-map:
+      custome-metadata: 自定义元数据
+
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+      # 密码的实验没有通过
+      # defaultZone: http://user:asdf@localhost:8761/eureka/
+
+spring:
+  application:
+   name: microservice-simple-provider-user
+
+  # 数据源
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.31.29:3306/mybatis?serverTimezone=CTT&useUnicode=true&characterEncoding=utf8&useSSL=false&allowMultiQueries=true&autoReconnect=true
+    username: root
+    password: 1234
+    tomcat:
+      max-active: 4
+      min-idle: 2
+      initial-size: 2
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate.format_sql: true
+    open-in-view: false
+
+---
+# 用于搭建多服务提供者环境
+server:
+  port: 8090
+
+eureka:
+  instance:
+    hostname: microservice-simple-provider-user
+    prefer-ip-address: true
+    metadata-map:
+      custome-metadata: 自定义元数据
+
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+      # 密码的实验没有通过
+      # defaultZone: http://user:asdf@localhost:8761/eureka/
+
+spring:
+  profiles: user0
+
+  application:
+   name: microservice-simple-provider-user
+
+  # 数据源
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.31.29:3306/mybatis?serverTimezone=CTT&useUnicode=true&characterEncoding=utf8&useSSL=false&allowMultiQueries=true&autoReconnect=true
+    username: root
+    password: 1234
+    tomcat:
+      max-active: 4
+      min-idle: 2
+      initial-size: 2
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate.format_sql: true
+    open-in-view: false
+
+---
+# 用于搭建多服务提供者环境
+server:
+  port: 8091
+
+eureka:
+  instance:
+    hostname: microservice-simple-provider-user
+    prefer-ip-address: true
+    metadata-map:
+      custome-metadata: 自定义元数据
+
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+      # 密码的实验没有通过
+      # defaultZone: http://user:asdf@localhost:8761/eureka/
+
+spring:
+  profiles: user1
+
+  application:
+   name: microservice-simple-provider-user
+
+  # 数据源
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.31.29:3306/mybatis?serverTimezone=CTT&useUnicode=true&characterEncoding=utf8&useSSL=false&allowMultiQueries=true&autoReconnect=true
+    username: root
+    password: 1234
+    tomcat:
+      max-active: 4
+      min-idle: 2
+      initial-size: 2
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate.format_sql: true
+    open-in-view: false
